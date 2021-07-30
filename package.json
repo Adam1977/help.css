@@ -1,0 +1,22 @@
+{
+  "name": "help.css",
+  "version": "0.0.1",
+  "description": "样式封装，快捷使用",
+  "main": "dist/helper.min.css",
+  "author": "Adam",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Adam1977/help.css.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp start"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-less": "^5.0.0"
+  }
+}

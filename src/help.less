@@ -1,0 +1,130 @@
+@gutters: 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68,
+  72, 76, 80;
+@sizes: 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 40, 42, 44,
+  46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80;
+@weight: 1, 2, 3, 4, 5, 6, 7;
+// Margin && Padding
+.generate-spaces();
+.generate-spaces(@i: 1) when (@i =< length(@gutters)) {
+  @n: extract(@gutters, @i);
+  .mg-t@{n} {
+    margin-top: (1px * @n) !important;
+  }
+  .mg-b@{n} {
+    margin-top: (1px * @n) !important;
+  }
+  .mg-l@{n} {
+    margin-left: (1px * @n) !important;
+  }
+  .mg-r@{n} {
+    margin-right: (1px * @n) !important;
+  }
+  .mg-x@{n} {
+    margin-left: (1px * @n) !important;
+    margin-right: (1px * @n) !important;
+  }
+  .mg-y@{n} {
+    margin-top: (1px * @n) !important;
+    margin-bottom: (1px * @n) !important;
+  }
+  .pd-t@{n} {
+    padding-top: (1px * @n) !important;
+  }
+  .pd-b@{n} {
+    padding-bottom: (1px * @n) !important;
+  }
+  .pd-l@{n} {
+    padding-left: (1px * @n) !important;
+  }
+  .pd-r@{n} {
+    padding-right: (1px * @n) !important;
+  }
+  .pd-x@{n} {
+    padding-left: (1px * @n) !important;
+    padding-right: (1px * @n) !important;
+  }
+  .pd-y@{n} {
+    padding-top: (1px * @n) !important;
+    padding-bottom: (1px * @n) !important;
+  }
+  .generate-spaces(@i + 1) !important;
+}
+
+// font-size
+.font-size();
+.font-size(@j: 1) when (@j =< length(@sizes)) {
+  @n: extract(@sizes, @j);
+  .fz-@{n} {
+    font-size: (1px * @n);
+  }
+  .font-size(@j + 1);
+}
+
+// line-height
+.line-height();
+.line-height(@i: 1) when (@i =< length(@gutters)) {
+  @n: extract(@gutters, @i);
+  .lh-@{n} {
+    line-height: (1px * @n);
+  }
+  .line-height(@i + 1);
+}
+
+// font-weight
+.font-weight();
+.font-weight(@i: 1) when(@i =< length(@weight)) {
+  @n: extract(@weight, @i);
+  .fw-@{n} {
+    font-weight: (100 * @n);
+  }
+  .font-weight(@i + 1);
+}
+// 超出一行省略号显示
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*！
+* 多行显示省略号
+* params = $col 为行数
+*/
+.no-wrap-more(@col) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @col;
+  overflow: hidden;
+}
+.no-wrap-more-1 {
+  .no-wrap-more(1);
+  word-break: break-all;
+}
+.no-wrap-more-2 {
+  .no-wrap-more(2);
+}
+// position
+.p-r {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+// Misc. classes
+// 数字、字母强制换行
+.wb {
+  word-break: break-all;
+}
+// flex布局
+.d-f {
+  display: flex;
+}
+// 对其方式
+.ta-c {
+  text-align: center;
+}
+.ta-l {
+  text-align: left;
+}
+.ta-r {
+  text-align: right;
+}
