@@ -1,6 +1,6 @@
 {
   "name": "help.css",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "样式封装，快捷使用",
   "main": "help.min.css",
   "author": "Adam",
